@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+   
+</head>
+<body>
+    <h1>Click to Change the Font Size!</h1>
+    <button id = "50">Make text 50px</button>
+    <button id = "70">Make text 70px</button>
+    <button id = "90">Make text 90px</button>
+    <button id="20">Revert to original size</button>
+    <script>
+        function changeFontSize(size){
+            return function(){
+                document.body.style.fontSize=size;
+            };
+        }
+        var fif=changeFontSize('50px')
+        var sev=changeFontSize('70px')
+        var nin = changeFontSize('90px')
+        var org = changeFontSize('20px')
+
+        document.getElementById('50').onclick=fif
+        document.getElementById('70').onclick=sev
+        document.getElementById('90').onclick=nin
+        document.getElementById('20').onclick=org
+    </script>
+</body>
+</html>
